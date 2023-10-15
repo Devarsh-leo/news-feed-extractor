@@ -52,7 +52,7 @@ import subprocess
 
 REACT_APP_DIR = "./news-feed-extractor-frontend"
 NODE_APP_DIR = "./news-feed-extractor-backend"
-FLASK_APP_DIR = "./news-feed-extractor"
+FLASK_APP_DIR = "./news-feed-extractor-worker"
 # Run a simple shell command
 # result = subprocess.run(
 #     f"cd {NODE_APP_DIR} ; start node server.js ",
@@ -81,8 +81,8 @@ node_server = subprocess.Popen(
 flask_server = subprocess.Popen(
     f'cd {FLASK_APP_DIR} && "env/Scripts/activate" && set NEWS_EXTRACTOR_REACT_PORT={react_port} && set NEWS_EXTRACTOR_NODE_PORT={node_port} && flask run --port={flask_port}',
     shell=True,
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
+    # stdout=subprocess.PIPE,
+    # stderr=subprocess.PIPE,
     text=True,
 )
 
