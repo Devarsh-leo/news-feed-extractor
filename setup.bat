@@ -9,9 +9,9 @@ call setup.bat
 deactivate
 
 cd ../news-feed-extractor-backend
-npm i
+npm install
 
 cd ../news-feed-extractor-frontend
-npm cache clean --force
-npm i 
+npm install
+npm install --save-dev cross-env
 PAUSE
