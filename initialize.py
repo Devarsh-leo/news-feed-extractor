@@ -2,6 +2,7 @@ import psutil
 import webbrowser
 import socket
 import sys
+import time
 
 
 def find_available_port():
@@ -61,6 +62,14 @@ FLASK_APP_DIR = "./news-feed-extractor-worker"
 #     stderr=subprocess.PIPE,
 #     text=True,
 # )
+flask_server = subprocess.Popen(
+    f'cd {FLASK_APP_DIR} && "env/Scripts/activate" && set NEWS_EXTRACTOR_REACT_PORT={react_port} && set NEWS_EXTRACTOR_NODE_PORT={node_port} && flask run --port={flask_port}',
+    shell=True,
+    # stdout=subprocess.PIPE,
+    # stderr=subprocess.PIPE,
+    text=True,
+)
+
 
 react_server = subprocess.Popen(
     f"cd {REACT_APP_DIR} && set REACT_APP_NEWS_EXTRACTOR_NODE_PORT={node_port}&& set PORT={react_port}&&set REACT_APP_NEWS_EXTRACTOR_FLASK_PORT={flask_port}&& npm start",
@@ -92,7 +101,7 @@ print("react_port", react_port, "node_port", node_port, "flask_port", flask_port
 # node_server.kill()
 
 react_url = f"http://localhost:{flask_port}"
-# time.sleep(4)
+time.sleep(1)
 webbrowser.open(react_url)
 # print(node_server)
 # print(react_server)
