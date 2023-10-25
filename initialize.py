@@ -3,6 +3,125 @@ import webbrowser
 import socket
 import sys
 import time
+import json
+import os
+
+URL_KEYWORDS_PATH = "news-feed-extractor-backend/url_keywords.json"
+data = {
+    "https://www.ft.com/markets": {
+        "isChecked": True,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "ETF": True,
+            "unit trust": True,
+            "OEIC": True,
+            "SICAV": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "NAV": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+    "https://www.cityam.com/category/markets/": {
+        "isChecked": True,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "ETF": True,
+            "unit trust": True,
+            "OEIC": True,
+            "SICAV": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "NAV": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+    "https://www.reuters.com/news/archive/fundsFundsNews": {
+        "isChecked": True,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "ETF": True,
+            "unit trust": True,
+            "OEIC": True,
+            "SICAV": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "NAV": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+    "https://www.hl.co.uk/news/tags/funds": {
+        "isChecked": True,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "ETF": True,
+            "unit trust": True,
+            "OEIC": True,
+            "SICAV": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "NAV": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+    "https://www.investmentweek.co.uk/category/investment/funds": {
+        "isChecked": True,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "ETF": True,
+            "unit trust": True,
+            "OEIC": True,
+            "SICAV": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "NAV": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+    "https://www.morningstar.co.uk/uk/collection/2114/fund-research--insights.aspx?page=1": {
+        "isChecked": True,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "ETF": True,
+            "unit trust": True,
+            "OEIC": True,
+            "SICAV": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "NAV": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+}
+
+
+if not os.path.exists():
+    with open(URL_KEYWORDS_PATH, "w") as fp:
+        json.dump(data, fp, indent=4)
 
 
 def find_available_port():
@@ -82,8 +201,8 @@ react_server = subprocess.Popen(
 node_server = subprocess.Popen(
     f"cd {NODE_APP_DIR} && npm start {node_port}",
     shell=True,
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
+    # stdout=subprocess.PIPE,
+    # stderr=subprocess.PIPE,
     text=True,
 )
 
