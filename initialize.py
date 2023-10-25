@@ -101,7 +101,7 @@ print("react_port", react_port, "node_port", node_port, "flask_port", flask_port
 # node_server.kill()
 
 react_url = f"http://localhost:{flask_port}"
-time.sleep(1)
+time.sleep(3)
 webbrowser.open(react_url)
 # print(node_server)
 # print(react_server)
