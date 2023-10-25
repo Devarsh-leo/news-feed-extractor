@@ -119,7 +119,7 @@ data = {
 }
 
 
-if not os.path.exists():
+if not os.path.exists(URL_KEYWORDS_PATH):
     with open(URL_KEYWORDS_PATH, "w") as fp:
         json.dump(data, fp, indent=4)
 
