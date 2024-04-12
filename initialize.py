@@ -9,7 +9,7 @@ import os
 URL_KEYWORDS_PATH = "news-feed-extractor-backend/url_keywords.json"
 data = {
     "https://www.ft.com/markets": {
-        "isChecked": True,
+        "isChecked": False,
         "keywords": {
             "fund": True,
             "investment trust": True,
@@ -27,7 +27,7 @@ data = {
         },
     },
     "https://www.cityam.com/category/markets/": {
-        "isChecked": True,
+        "isChecked": False,
         "keywords": {
             "fund": True,
             "investment trust": True,
@@ -44,8 +44,8 @@ data = {
             "premium": True,
         },
     },
-    "https://www.reuters.com/news/archive/fundsFundsNews": {
-        "isChecked": True,
+    "https://www.reuters.com/news/archive/funds": {
+        "isChecked": False,
         "keywords": {
             "fund": True,
             "investment trust": True,
@@ -63,7 +63,7 @@ data = {
         },
     },
     "https://www.hl.co.uk/news/tags/funds": {
-        "isChecked": True,
+        "isChecked": False,
         "keywords": {
             "fund": True,
             "investment trust": True,
@@ -81,7 +81,7 @@ data = {
         },
     },
     "https://www.investmentweek.co.uk/category/investment/funds": {
-        "isChecked": True,
+        "isChecked": False,
         "keywords": {
             "fund": True,
             "investment trust": True,
@@ -99,7 +99,97 @@ data = {
         },
     },
     "https://www.morningstar.co.uk/uk/collection/2114/fund-research--insights.aspx?page=1": {
-        "isChecked": True,
+        "isChecked": False,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "etf": True,
+            "unit trust": True,
+            "oeic": True,
+            "sicav": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "nav": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+    "https://www.etfstream.com/news": {
+        "isChecked": False,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "etf": True,
+            "unit trust": True,
+            "oeic": True,
+            "sicav": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "nav": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+    "https://www.morningstar.co.uk/uk/collection/2135/investment-trust-research--insights.aspx": {
+        "isChecked": False,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "etf": True,
+            "unit trust": True,
+            "oeic": True,
+            "sicav": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "nav": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+    "https://www.bestinvest.co.uk/news/investing": {
+        "isChecked": False,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "etf": True,
+            "unit trust": True,
+            "oeic": True,
+            "sicav": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "nav": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+    "https://www.thisismoney.co.uk/money/investing/index.html": {
+        "isChecked": False,
+        "keywords": {
+            "fund": True,
+            "investment trust": True,
+            "etf": True,
+            "unit trust": True,
+            "oeic": True,
+            "sicav": True,
+            "fund manager": True,
+            "asset manager": True,
+            "portfolio manager": True,
+            "nav": True,
+            "open ended": True,
+            "discount": True,
+            "premium": True,
+        },
+    },
+    "https://moneytothemasses.com/category/news": {
+        "isChecked": False,
         "keywords": {
             "fund": True,
             "investment trust": True,
